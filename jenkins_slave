@@ -1,1 +1,15 @@
-# your Home work
+pipeline {
+    agent any
+    parameters {
+        string(name: 'NAME', defaultValue: 'Chakrit', description: 'My Name')
+        string(name: 'Ages', defaultValue: '18' , description: 'My Ages')
+    }
+    stages {
+        stage('Name&Age') {
+            steps {
+               echo "Name : ${params.NAME}  Age : ${params.Ages}"
+               
+            }
+        }
+    }
+}
